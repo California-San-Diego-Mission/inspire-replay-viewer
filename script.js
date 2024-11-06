@@ -1,3 +1,4 @@
+alert("working");
 const reader = new FileReader();
 
 reader.onload = function(event) {
