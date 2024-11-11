@@ -1,16 +1,119 @@
-
-<!-- source for embedding FB videos: https://developers.facebook.com/docs/plugins/embedded-video-player/ -->
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inspire</title>
-    <script src = 'script.js'></script>
-  </head>
-  <body>
-    <center>
-      
-      <iframe src="https://drive.google.com/file/d/1mVnCy0ioTX1PBqeMBtoUpThBaXlexj_8/preview" width="640" height="480" allow="autoplay"></iframe>
-    </center>
-  </body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .video-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .video-list li {
+            background: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-list li h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .video-list li iframe {
+            width: 100%;
+            height: 480px;
+            margin-top: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#upcoming">Upcoming Performance</a>
+    </header>
+
+    <div class="content">
+        <ul class="video-list" id="videoList">
+            <!-- Videos will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        async function loadVideos() {
+            const response = await fetch('videos.csv');
+            const data = await response.text();
+            const videoList = document.getElementById('videoList');
+
+            const rows = data.split('\n').filter(row => row.trim() !== '');
+            rows.forEach(row => {
+                const [url, title] = row.split(',');
+
+                // Create list item
+                const listItem = document.createElement('li');
+
+                // Add title
+                const videoTitle = document.createElement('h3');
+                videoTitle.textContent = title;
+                listItem.appendChild(videoTitle);
+
+                // Add iframe
+                const iframe = document.createElement('iframe');
+                iframe.src = `${url.trim()}/preview`;
+                iframe.width = '640';
+                iframe.height = '480';
+                iframe.allow = 'autoplay';
+                listItem.appendChild(iframe);
+
+                // Add list item to the video list
+                videoList.appendChild(listItem);
+            });
+        }
+
+        loadVideos().catch(error => console.error('Error loading videos:', error));
+    </script>
+
+</body>
 </html>
