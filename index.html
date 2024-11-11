@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspire</title>
+    <title>Music Performances</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,13 +14,32 @@
             align-items: center;
             background-color: #f4f4f4;
         }
-        
+
+        .banner {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
         header {
-            background-color: #333;
+            background-color: #22736f;
             color: white;
             width: 100%;
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             font-size: 1.5em;
             position: sticky;
             top: 0;
@@ -31,6 +50,9 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            padding: 10px 20px;
+            background-color: #22736f;
+            border-radius: 5px;
         }
 
         .content {
@@ -70,6 +92,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Home button -->
+    <a href="https://christinsd.org/" class="home-button">Home</a>
+
+    <!-- Banner image -->
+    <img src="banner.jpg" alt="Banner Image" class="banner">
 
     <header>
         <a href="#upcoming">Upcoming Performance</a>
