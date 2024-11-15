@@ -110,37 +110,6 @@
             border: none;
         }
     </style>
-</head>
-<body>
-
-    <!-- Main Header -->
-    <div class="header">♫ INSPIRE ♬</div>
-
-    <!-- Home button -->
-    <a href="https://christinsd.org/" class="home-button">Home</a>
-
-    <!-- Portrait Image -->
-    <img src="https://www.churchofjesuschrist.org/imgs/5ae19ccdd1f325fe888060e03c6595fe4f780b60/full/800%2C/0/default" alt="Portrait Image" class="portrait">
-
-    <!-- Blurb Text -->
-    <div class="blurb">
-        <p>Listen to inspiring music and messages about Jesus Christ!</p>
-        <p>First Friday every Month!</p>
-    </div>
-
-    <!-- Upcoming Performance Link -->
-    <div class="upcoming-performance">
-        <a href="http://christinsd.org/r/insp" style="color: inherit; text-decoration: none;">Click here to watch the next broadcast live!</a>
-    </div>
-
-    <!-- Past Performances Section -->
-    <div class="content">
-        <div class="section-header">Listen to more inspiring music below!</div>
-        <ul class="video-list" id="videoList">
-            <!-- Videos will be dynamically added here -->
-        </ul>
-    </div>
-
     <script>
         async function loadVideos() {
             const response = await fetch('videos.csv');
@@ -174,6 +143,38 @@
 
         loadVideos().catch(error => console.error('Error loading videos:', error));
     </script>
+</head>
+<body>
+
+    <!-- Main Header -->
+    <div class="header">♫ INSPIRE ♬</div>
+
+    <!-- Home button -->
+    <a href="https://christinsd.org/" class="home-button">Home</a>
+
+    <!-- Portrait Image -->
+    <img src="https://www.churchofjesuschrist.org/imgs/5ae19ccdd1f325fe888060e03c6595fe4f780b60/full/800%2C/0/default" alt="Portrait Image" class="portrait">
+
+    <!-- Blurb Text -->
+    <div class="blurb">
+        <p>Listen to inspiring music and messages about Jesus Christ!</p>
+        <p>First Friday every Month!</p>
+    </div>
+
+    <!-- Upcoming Performance Link -->
+    <div class="upcoming-performance">
+        <a href="http://christinsd.org/r/insp" style="color: inherit; text-decoration: none;">Click here to watch the next broadcast live!</a>
+    </div>
+
+    <!-- Past Performances Section -->
+    <div class="content">
+        <div class="section-header">Listen to more inspiring music below!</div>
+        <ul class="video-list" id="videoList">
+            <!-- Videos will be dynamically added here -->
+        </ul>
+    </div>
+
+
 
 </body>
 </html>
