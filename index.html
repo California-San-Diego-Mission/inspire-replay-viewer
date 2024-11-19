@@ -28,13 +28,21 @@
             margin-top: 10px;
             background-color: #22736f;
             color: white;
-            padding: 5px 10px;
+            padding: 15px 20px;
             text-decoration: none;
-            font-size: 0.9em;
-            border-radius: 5px;
+            font-size: 1.1em;
+            font-family: Georgia, serif;
+            border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            position: relative;
-            top: -10px;
+            text-align: center;
+            display: inline-block;
+            line-height: 1.5em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .home-button:hover {
+            background-color: #1a5e55;
+            transform: scale(1.05);
         }
 
         .portrait {
@@ -59,13 +67,24 @@
             background-color: #22736f;
             color: white;
             font-size: 1.5em;
-            font-family: Vidaloka;
+            font-family: Vidaloka, serif;
             font-weight: bold;
             text-align: center;
             width: 80%;
             max-width: 600px;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .upcoming-performance a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .upcoming-performance:hover {
+            background-color: #1a5e55;
+            transform: scale(1.05);
         }
 
         .content {
@@ -109,6 +128,17 @@
             margin-top: 10px;
             border: none;
         }
+
+        .video-list li a {
+            text-decoration: none;
+            color: #22736f;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .video-list li a:hover {
+            color: #1a5e55;
+        }
     </style>
     <script>
         async function loadVideos() {
@@ -148,29 +178,32 @@
 
     <!-- Main Header -->
     <div class="header">♫ INSPIRE ♬</div>
-    <p></p>
 
     <!-- Home button -->
-    <a href="https://christinsd.org/" class="home-button"><p>Come unto Christ in San Diego</p><p>Find a church near you!</p></a>
+    <a href="https://christinsd.org/" class="home-button">
+        Come unto Christ in San Diego<br>Find a church near you!
+    </a>
 
     <!-- Portrait Image -->
-    <img src="https://drive.google.com/file/d/1qJ9j7mYcVMxEwNEsIhN1tevpt2nbkJVK/view" alt="Inspire Banner" class="portrait">
+    <img src="https://drive.google.com/uc?id=1qJ9j7mYcVMxEwNEsIhN1tevpt2nbkJVK" alt="Inspire Banner" class="portrait">
+
+    <!-- Blurb -->
+    <div class="blurb">
+        Welcome! Experience uplifting and inspiring music brought to you by our talented musicians.
+    </div>
 
     <!-- Upcoming Performance Link -->
     <div class="upcoming-performance">
-        <a href="http://christinsd.org/r/insp" style="color: inherit; text-decoration: none;">Click here to watch the next broadcast live!</a>
+        <a href="http://christinsd.org/r/insp">Click here to watch the next broadcast live!</a>
     </div>
 
     <!-- Past Performances Section -->
     <div class="content">
         <div class="section-header">Listen to more inspiring music below!</div>
-        <p></p>
         <ul class="video-list" id="videoList">
             <!-- Videos will be dynamically added here -->
         </ul>
     </div>
-
-
 
 </body>
 </html>
